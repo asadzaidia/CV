@@ -25,7 +25,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "precommit-msg": "echo 'Starting precommit hooks...' && exit 0",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "prepare": "husky install",
+    "lint:fix": "eslint '*.{js,ts,jsx,tsx}' --fix --no-error-on-unmatched-pattern"
   },
   "eslintConfig": {
     "extends": [
@@ -50,17 +52,18 @@
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
-    "husky": "^7.0.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "husky": "^7.0.1",
     "prettier": "^2.3.2",
     "pretty-quick": "^3.1.1"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run precommit-msg && lint-staged"
+      "pre-commit": "precommit-msg && lint-staged"
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": [
+    "*.{js,jsx,ts,tsx,md,html}": [
       "prettier --write",
       "npm run lint:fix",
       "eslint",

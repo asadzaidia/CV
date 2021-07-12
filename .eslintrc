@@ -1,59 +1,43 @@
 //to extend airbnb configs
 {
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "sourceType": "module",
-        "allowImportExportEverywhere": false,
-        "codeFrame": false
-    },
-    "settings": {
-      "import/resolver": {
-        "node": {
-          "extensions": [
-            ".js",
-            ".jsx",
-            ".ts",
-            ".tsx"
-          ]
-        }
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame": false
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
-    },
-    "extends": [
-        "airbnb",
-        "prettier"
-    ],
-    "env": {
-        "browser": true,
-        "jest": true
-    },
-    "rules": {
-        "max-len": [
-            "error",
-            {
-                "code": 100
-            }
-        ],
-        "prefer-promise-reject-errors": [
-            "off"
-        ],
-        "react/jsx-filename-extension": [
-            "off"
-        ],
-        "react/prop-types": [
-            "warn"
-        ],
-        "no-return-assign": [
-            "off"
-        ],
-        "import/extensions": [
-          "error",
-          "ignorePackages",
-          {
-            "js": "never",
-            "jsx": "never",
-            "ts": "never",
-            "tsx": "never"
-          }
-        ]
     }
+  },
+  "extends": ["airbnb", "prettier"],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "max-len": [
+      "error",
+      {
+        "code": 100
+      }
+    ],
+    "prefer-promise-reject-errors": ["off"],
+    "react/jsx-filename-extension": ["off"],
+    "react/prop-types": ["warn"],
+    "no-return-assign": ["off"],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  }
 }

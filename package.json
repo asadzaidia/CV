@@ -12,7 +12,6 @@
     "@types/react-dom": "^17.0.0",
     "eslint": "^7.30.0",
     "eslint-plugin-react": "^7.24.0",
-    "husky": "^7.0.1",
     "lint-staged": "^11.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -25,7 +24,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "precommit-msg": "echo 'Starting precommit hooks...' && exit 0"
+    "precommit-msg": "echo 'Starting precommit hooks...' && exit 0",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -50,16 +50,23 @@
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
+    "husky": "^7.0.0",
     "prettier": "^2.3.2",
     "pretty-quick": "^3.1.1"
   },
   "husky": {
     "hooks": {
-        "pre-commit": "npm run precommit-msg && lint-staged"
+      "pre-commit": "npm run precommit-msg && lint-staged"
     }
-},
-"lint-staged": {
-    "src/**/*.{js,jsx}": ["prettier --write", "npm run lint:fix","eslint", "pretty-quick -- staged", "git add"],
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "prettier --write",
+      "npm run lint:fix",
+      "eslint",
+      "pretty-quick -- staged",
+      "git add"
+    ],
     "*.md": [
       "prettier --parser markdown --write"
     ]

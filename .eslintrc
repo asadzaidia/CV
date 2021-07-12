@@ -6,6 +6,18 @@
         "allowImportExportEverywhere": false,
         "codeFrame": false
     },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx"
+          ]
+        }
+      }
+    },
     "extends": [
         "airbnb",
         "prettier"
@@ -32,6 +44,16 @@
         ],
         "no-return-assign": [
             "off"
+        ],
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never"
+          }
         ]
     }
 }

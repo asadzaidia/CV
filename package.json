@@ -55,10 +55,13 @@
   },
   "husky": {
     "hooks": {
-        "pre-commit": "yarn run precommit-msg && lint-staged"
+        "pre-commit": "npm run precommit-msg && lint-staged"
     }
 },
 "lint-staged": {
-    "src/**/*.{js,jsx}": ["eslint", "pretty-quick -- staged", "git add"]
+    "src/**/*.{js,jsx}": ["prettier --write", "npm run lint:fix","eslint", "pretty-quick -- staged", "git add"],
+    "*.md": [
+      "prettier --parser markdown --write"
+    ]
   }
 }

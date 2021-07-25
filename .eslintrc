@@ -13,7 +13,7 @@
       }
     }
   },
-  "extends": ["airbnb","prettier"],
+  "extends": ["airbnb", "prettier"],
   "env": {
     "browser": true,
     "jest": true
@@ -25,15 +25,12 @@
         "code": 100
       }
     ],
-    "arrow-body-style": [
-      2,
-      "always"
-    ],
+    "arrow-body-style": [2, "always"],
     "prefer-promise-reject-errors": ["off"],
     "react/jsx-filename-extension": ["off"],
     "react/prop-types": ["off"],
     "no-return-assign": ["off"],
-    "react/jsx-boolean-value" : ["off"],
+    "react/jsx-boolean-value": ["off"],
     "import/extensions": [
       "error",
       "ignorePackages",
